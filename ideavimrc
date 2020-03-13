@@ -1,0 +1,68 @@
+"定义leader
+let mapleader=","
+set hlsearch                    " highlight searches
+set incsearch                   " do incremental searching, search as you type
+set ignorecase                  " ignore case when searching
+set smartcase                   " no ignorecase if Uppercase char present
+set clipboard=unnamedplus  " 使用系统粘贴板(vim用y粘贴的内容也可以通过command + c 粘贴)
+
+" Insert mode shortcut
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+" Quit insert mode
+inoremap jj <Esc>
+
+" Quit visual mode
+vnoremap v <Esc>
+
+" Tab operation
+nnoremap tn gt
+nnoremap tp gT
+
+set showcmd "显示右下角命令
+
+
+
+" Window operation
+nnoremap <Space>ww <C-W>w
+nnoremap <Space>wd <C-W>c
+nnoremap <Space>wj <C-W>j
+nnoremap <Space>wk <C-W>k
+nnoremap <Space>wh <C-W>h
+nnoremap <Space>wl <C-W>l
+nnoremap <Space>ws <C-W>s
+
+noremap <space> :
+
+
+nnoremap gc :action GotoClass<CR>
+nnoremap ga :action GotoAction<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gi :action GotoImplementation<CR> 
+nnoremap gf :action GotoFile<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap gm :action GotoMethodName<CR>
+" 格式化当前文件
+nnoremap <Leader>fm :action ReformatCode<CR><esc>
+
+"编译, 运行相关
+nnoremap <Space>r :action RunClass<CR>
+
+" 开始debug
+nnoremap <Space>d :action Debug<CR>
+
+
+"格式化代码
+:map \r :action ReformatCode<CR>
+
+"acejump配合
+" Press `f` to activate AceJump
+map f :action AceAction<CR>
+" Press `F` to activate Target Mode
+map F :action AceTargetAction<CR>
+" Press `g` to activate Line Mode
+map g :action AceLineAction<CR>
+
+
